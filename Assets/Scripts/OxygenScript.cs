@@ -10,6 +10,6 @@ public class OxygenScript : MonoBehaviour
        GameManage.Oxygen = 100;
        
         Destroy(gameObject);
-       
+        GameManage.Oxygen = 100;
     }
 }
