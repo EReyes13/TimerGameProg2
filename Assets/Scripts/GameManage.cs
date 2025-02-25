@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameManage : MonoBehaviour
 {
    public static float Oxygen = 100;
@@ -25,7 +26,11 @@ public class GameManage : MonoBehaviour
     
         OxygenText.text = (("Oxygen Level: ") + Oxygen.ToString("F1") +("%") );
         
-        
+        if(Count >= 6)
+        {
+            Debug.Log("Countdown start");
+            Count = 0;
+        }
     }
 
   

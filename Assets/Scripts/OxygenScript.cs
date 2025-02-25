@@ -6,6 +6,9 @@ public class OxygenScript : MonoBehaviour
 
     public void breathe()
     {
+       
+       GameManage.Oxygen = 100;
+       
         Destroy(gameObject);
        
     }

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D Hitbox;
     public float Speed = 5;
 
-    public GameObject otherGameObject;
 
     public void Update()
     {
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
          if (count != null)
          {
             count.LeverCollide();
-            GameManage.Count ++;
+            
          }
          OxygenScript oxi = other.gameObject.GetComponent<OxygenScript>();
          if (oxi != null)
