@@ -45,13 +45,9 @@ public class PlayerController : MonoBehaviour
             count.LeverCollide();
             
          }
-         OxygenScript oxi = other.gameObject.GetComponent<OxygenScript>();
-         if (oxi != null)
-         {
-            oxi.breathe();
-         }
+       
          }
 
-
+    //OntriggerStay2D "enables a function to occur when the object stays within the collider zone."
 
 }
