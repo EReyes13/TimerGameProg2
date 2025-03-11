@@ -7,9 +7,13 @@ public class OxygenScript : MonoBehaviour
     public void breathe()
     {
        
-      // OxiManage.Oxygen = 100;
-       
-        Destroy(gameObject);
+      OxiManage.loss = false;
+      VignetteManage.blue = true;
      
+    }
+    public void Exhale()
+    {
+      OxiManage.loss = true;
+      VignetteManage.blue = false;
     }
 }

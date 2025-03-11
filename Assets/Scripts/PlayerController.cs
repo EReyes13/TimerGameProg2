@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public BoxCollider2D Hitbox;
     public float Speed = 5;
 
+    public GameObject Vignette;
+
 
     public void Update()
     {
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
         
         //Finally, I take that variable and I feed it to the component in charge of movement
         RB.linearVelocity = vel;
-
+        
         
     }
         private void OnCollisionEnter2D(Collision2D other)
@@ -45,9 +47,32 @@ public class PlayerController : MonoBehaviour
             count.LeverCollide();
             
          }
-       
+            Evac Eve = other.gameObject.GetComponent<Evac>();
+            if(Eve != null)
+            {
+                Eve.Win();
+            }
          }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+       
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+         OxygenScript Oxigen = other.gameObject.GetComponent<OxygenScript>();
+        if(Oxigen != null)
+        {
+            Oxigen.Exhale();
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+         OxygenScript Oxigen = other.gameObject.GetComponent<OxygenScript>();
+        if(Oxigen != null)
+        {
+            Oxigen.breathe();
+        }
+    }
     //OntriggerStay2D "enables a function to occur when the object stays within the collider zone."
 
 }

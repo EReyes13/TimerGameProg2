@@ -9,20 +9,30 @@ public class GameManage : MonoBehaviour
     public TextMeshProUGUI Evac;
     public GameObject Evacuate;
     public GameObject EvacTime;
-    
-   
 
+    public GameObject Exit1;
+    public GameObject Exit2;
+    public GameObject Exit3;
+
+
+    void Start()
+    {
+        
+    }
     void Update()
     {
        
         
         
-        if(Count >= 6)
+        if(Count >= 3)
         {
             Debug.Log("Countdown start");
             Count = 0;
            Evacuate.SetActive(true);
            EvacTime.SetActive(true);
+            Exit1.SetActive(true);
+            Exit2.SetActive(true);
+            Exit3.SetActive(true);
            EvacCount.Final = true;  
         }
     }
